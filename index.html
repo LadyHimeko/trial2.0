@@ -1,0 +1,107 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday! 🎂💗</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Floating hearts -->
+    <div class="hearts">
+        <span>💗</span>
+        <span>💕</span>
+        <span>💖</span>
+        <span>💗</span>
+        <span>💞</span>
+        <span>💓</span>
+        <span>💗</span>
+    </div>
+
+    <!-- Balloons -->
+    <div class="balloon balloon1">🎈</div>
+    <div class="balloon balloon2">🎈</div>
+    <div class="balloon balloon3">🎈</div>
+    <div class="balloon balloon4">🎈</div>
+
+    <!-- Main birthday card -->
+    <main class="birthday-card">
+
+        <div class="sparkles">✨ ✨ ✨</div>
+
+        <h1>Happy Birthday! 🎂</h1>
+
+        <h2>To Someone Very Special 💗</h2>
+
+        <p class="intro">
+            Today is your special day! 🥳
+        </p>
+
+        <!-- Glowing cake -->
+        <div class="cake">
+            🎂
+        </div>
+
+        <p>
+            I hope your birthday is filled with
+            laughter, happiness, good food,
+            and lots of wonderful memories. ✨
+        </p>
+
+        <!-- Click button -->
+        <button onclick="showMessage()">
+            💌 Click Me!
+        </button>
+
+        <!-- Hidden message -->
+        <div id="hiddenMessage" class="hidden-message">
+
+            <div class="big-heart">💗</div>
+
+            <h2>A Little Birthday Message...</h2>
+
+            <p>
+                I hope you know how special you are.
+                May this new chapter of your life bring
+                you countless reasons to smile.
+            </p>
+
+            <p>
+                Keep being your wonderful self,
+                keep laughing, keep dreaming,
+                and don't forget to enjoy the little things. 🌷
+            </p>
+
+            <p class="final-message">
+                Happy Birthday! 🥳🎂💗
+            </p>
+
+        </div>
+
+        <p class="signature">
+            With lots of love,<br>
+            <strong>Your Friend 💌</strong>
+        </p>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script>
+        function showMessage() {
+
+            const message = document.getElementById("hiddenMessage");
+
+            message.classList.toggle("show");
+
+        }
+    </script>
+
+</body>
+</html>
+```
