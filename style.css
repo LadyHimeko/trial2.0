@@ -1,0 +1,462 @@
+```css
+/* =========================
+   GENERAL PAGE
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Trebuchet MS", Arial, sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #ffd6e7,
+        #ffe9f2,
+        #dfe8ff
+    );
+
+    overflow-x: hidden;
+    position: relative;
+}
+
+
+/* =========================
+   BIRTHDAY CARD
+========================= */
+
+.birthday-card {
+    width: 90%;
+    max-width: 600px;
+
+    margin: 50px 0;
+    padding: 45px 35px;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border-radius: 35px;
+
+    text-align: center;
+
+    box-shadow:
+        0 15px 40px rgba(255, 105, 150, 0.25);
+
+    position: relative;
+    z-index: 10;
+
+    animation: cardAppear 1.2s ease;
+}
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+h1 {
+    margin: 10px 0;
+
+    color: #ff5c8a;
+
+    font-size: 48px;
+
+    animation: titleBounce 2s infinite;
+}
+
+@keyframes titleBounce {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+}
+
+h2 {
+    color: #8a70d6;
+}
+
+p {
+    color: #555;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+.intro {
+    font-size: 20px;
+    color: #ff719b;
+}
+
+
+/* =========================
+   SPARKLES
+========================= */
+
+.sparkles {
+    font-size: 28px;
+
+    animation: sparkle 1.5s infinite;
+}
+
+@keyframes sparkle {
+
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(1.2);
+    }
+
+}
+
+
+/* =========================
+   GLOWING CAKE
+========================= */
+
+.cake {
+    font-size: 90px;
+
+    margin: 20px;
+
+    display: inline-block;
+
+    filter:
+        drop-shadow(0 0 10px #ff9fc0)
+        drop-shadow(0 0 25px #ffb6d0);
+
+    animation: cakeGlow 1.5s infinite alternate;
+}
+
+@keyframes cakeGlow {
+
+    from {
+        transform: scale(1);
+        filter:
+            drop-shadow(0 0 8px #ff9fc0);
+    }
+
+    to {
+        transform: scale(1.08);
+        filter:
+            drop-shadow(0 0 25px #ff69a0);
+    }
+
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+    border: none;
+
+    padding: 15px 30px;
+
+    margin: 20px;
+
+    border-radius: 50px;
+
+    background: linear-gradient(
+        135deg,
+        #ff79a7,
+        #ffabc6
+    );
+
+    color: white;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(255, 92, 138, 0.3);
+
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+
+    box-shadow:
+        0 10px 30px rgba(255, 92, 138, 0.5);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+
+/* =========================
+   HIDDEN MESSAGE
+========================= */
+
+.hidden-message {
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transform: scale(0.8);
+
+    transition:
+        max-height 1s ease,
+        opacity 0.8s ease,
+        transform 0.8s ease;
+
+    background: #fff0f6;
+
+    border-radius: 25px;
+
+    margin-top: 10px;
+}
+
+.hidden-message.show {
+    max-height: 500px;
+
+    padding: 25px;
+
+    opacity: 1;
+
+    transform: scale(1);
+}
+
+.big-heart {
+    font-size: 55px;
+
+    animation: heartbeat 1s infinite;
+}
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+}
+
+.final-message {
+    color: #ff5c8a;
+
+    font-size: 23px;
+
+    font-weight: bold;
+}
+
+.signature {
+    margin-top: 30px;
+
+    color: #777;
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.hearts span {
+    position: fixed;
+
+    bottom: -50px;
+
+    font-size: 25px;
+
+    opacity: 0.7;
+
+    z-index: 1;
+
+    animation: floatHeart 8s linear infinite;
+}
+
+
+/* Different positions and speeds */
+
+.hearts span:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.hearts span:nth-child(2) {
+    left: 25%;
+    animation-delay: 2s;
+    animation-duration: 7s;
+}
+
+.hearts span:nth-child(3) {
+    left: 40%;
+    animation-delay: 4s;
+    animation-duration: 9s;
+}
+
+.hearts span:nth-child(4) {
+    left: 60%;
+    animation-delay: 1s;
+}
+
+.hearts span:nth-child(5) {
+    left: 75%;
+    animation-delay: 3s;
+    animation-duration: 10s;
+}
+
+.hearts span:nth-child(6) {
+    left: 88%;
+    animation-delay: 5s;
+}
+
+.hearts span:nth-child(7) {
+    left: 50%;
+    animation-delay: 6s;
+    animation-duration: 8s;
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================
+   BALLOONS
+========================= */
+
+.balloon {
+    position: fixed;
+
+    font-size: 65px;
+
+    z-index: 2;
+
+    animation: balloonFloat 4s ease-in-out infinite;
+}
+
+.balloon1 {
+    left: 5%;
+    top: 15%;
+}
+
+.balloon2 {
+    right: 6%;
+    top: 20%;
+
+    animation-delay: 1s;
+}
+
+.balloon3 {
+    left: 10%;
+    bottom: 10%;
+
+    animation-delay: 2s;
+}
+
+.balloon4 {
+    right: 10%;
+    bottom: 8%;
+
+    animation-delay: 3s;
+}
+
+@keyframes balloonFloat {
+
+    0%, 100% {
+        transform:
+            translateY(0)
+            rotate(-5deg);
+    }
+
+    50% {
+        transform:
+            translateY(-20px)
+            rotate(5deg);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .birthday-card {
+        padding: 35px 20px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .cake {
+        font-size: 70px;
+    }
+
+    .balloon {
+        font-size: 45px;
+    }
+
+}
+```
